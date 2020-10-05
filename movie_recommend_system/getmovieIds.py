@@ -14,7 +14,7 @@ def movieIds(maxMovies):
 
 	global movieIds
 	movieIds = []
-	num_pages = int(maxMovies / 20)
+	num_pages = int(int(maxMovies) / 20)
 	
 	for page in range(1,num_pages+1):
 		httpResp =tmdb.get(url,params={'page':page})
@@ -27,7 +27,7 @@ def movieIds(maxMovies):
 
 		jsonResponse = json.loads(httpResp.text)
 		movies = jsonResponse['results']
-		with open('data/moviesid.txt','a') as data_handle:
+		with open('data/moviesId.txt','a') as data_handle:
 
 			for movie in movies:
 				data_handle.write(str(movie['id'])+'\n')

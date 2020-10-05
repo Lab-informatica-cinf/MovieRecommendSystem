@@ -1,0 +1,35 @@
+
+'''
+urlbase+queryparams
+/search?text=<str>&apikey
+/search/movie?text=<str>
+
+/discover/movie?                  #https://www.themoviedb.org/documentation/api/discover
+
+	primary_release_date.gte
+	primary_release_date.lte
+
+	sort_by=popularity.desc
+	certification_country=US
+	certification=R
+	sort_by=vote_average.desc
+
+	certification.lte=G
+	sort_by=popularity.desc
+
+	with_genre=id_genre
+	primary_release_year=year
+
+	with_cast=castid
+	sort_by=revenue.desc
+
+	with_people=idpeople
+
+	vote_count.gte=num
+
+/find - 
+
+
+
+
+'''
