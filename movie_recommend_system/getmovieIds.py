@@ -4,19 +4,20 @@ import time
 import json
 import requests
 
-def movieIds(maxMovies):
-
+def get_all_movie_Ids(maxMovies): # how much bro?
+        # this should be are parametrize_api_connect
 	url = 'https://api.themoviedb.org/3/movie/top_rated'	
 	tmdb_api_key = os.environ['TMDB_API_KEY']
 
 	tmdb = requests.Session()
 	tmdb.params={'api_key':tmdb_api_key}
-
+        # 
 	global movieIds
 	movieIds = []
 	num_pages = int(int(maxMovies) / 20)
 	
 	for page in range(1,num_pages+1):
+                # call end point
 		httpResp =tmdb.get(url,params={'page':page})
 	
 		try:
